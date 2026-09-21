@@ -14,7 +14,14 @@ import matplotlib.pyplot as plt
 import streamlit as st
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-plt.rcParams['font.sans-serif'] = ['Microsoft YaHei', 'SimHei']
+# 加载项目自带中文字体，解决云端(Linux)无中文字体导致图表中文乱码的问题
+import matplotlib.font_manager as _fm
+_font_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "fonts", "NotoSansSC-Regular.otf")
+if os.path.exists(_font_path):
+    _fm.fontManager.addfont(_font_path)
+    plt.rcParams['font.sans-serif'] = ['Noto Sans CJK SC', 'Microsoft YaHei', 'SimHei']
+else:
+    plt.rcParams['font.sans-serif'] = ['Microsoft YaHei', 'SimHei']
 plt.rcParams['axes.unicode_minus'] = False
 
 st.set_page_config(page_title="智研智投 · 量化投研智能体", page_icon="🤖", layout="wide")
