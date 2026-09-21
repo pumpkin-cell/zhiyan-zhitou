@@ -169,7 +169,7 @@ def convert():
         i += 1
 
     doc.save(OUT)
-    print(f"✅ 已生成 Word 文档: {OUT}（封面 + 目录 + 正文，Markdown 标识符已去除）")
+    print(f"[OK] 已生成 Word 文档: {OUT}（封面 + 目录 + 正文，Markdown 标识符已去除）")
 
 
 if __name__ == '__main__':
