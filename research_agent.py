@@ -79,11 +79,25 @@ JSON 格式：
     return {"factor": "未知", "asset": "510300.SH", "lookback": 20}
 
 
+def _sanitize_text(text):
+    """清洗文本中的孤立代理字符（surrogates，U+D800–U+DFFF）。
+
+    pypdf 在解析某些 CID 编码的 PDF 时会产出孤立代理字符，这类字符无法编码为
+    UTF-8，会导致后续 `str.encode('utf-8')` / JSON 序列化抛出
+    ``UnicodeEncodeError: surrogates not allowed``。这里统一剔除，保证下游安全。
+    """
+    if not isinstance(text, str) or not text:
+        return text
+    # 通过 UTF-8 编码（errors='ignore' 跳过无法编码的 surrogate）再解码，得到干净文本
+    return text.encode('utf-8', errors='ignore').decode('utf-8')
+
+
 def extract_pdf_text(pdf_path):
-    """用 pypdf 提取 PDF 文本。"""
+    """用 pypdf 提取 PDF 文本（已清洗孤立代理字符）。"""
     from pypdf import PdfReader
     reader = PdfReader(pdf_path)
-    return "\n".join(page.extract_text() or "" for page in reader.pages)
+    raw = "\n".join(page.extract_text() or "" for page in reader.pages)
+    return _sanitize_text(raw)
 
 
 def extract_pdf_factors(pdf_text, provider="deepseek"):
@@ -193,6 +207,7 @@ def summarize_report_cached(pdf_text, provider="deepseek", hint=""):
     """带缓存的研报总结（默认多视角 + 确定性）：
     - 同一 PDF 内容（hash）只总结一次，之后复用缓存 → 谁跑、何时跑结果都一致（可复现）；
     - 默认 3 个固定视角 + temperature=0（确定性），覆盖更全面且不引入随机性。"""
+    pdf_text = _sanitize_text(pdf_text)
     key = hashlib.md5(pdf_text.encode('utf-8')).hexdigest()
     cache = _load_summary_cache()
     if key in cache:
