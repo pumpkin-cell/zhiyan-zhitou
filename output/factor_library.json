@@ -1,0 +1,399 @@
+{
+  "factors": [
+    {
+      "name": "momentum_5",
+      "type": "时序",
+      "definition": "",
+      "params": {},
+      "source": "factor_cards.csv 自动评估",
+      "metrics": {
+        "ic": -0.08347717976745876,
+        "icir": -0.9692259979704685,
+        "monotonic_ret": -0.004655554196988806
+      },
+      "status": "有效",
+      "version": 1,
+      "created": "2026-09-20 23:44:32",
+      "updated": "2026-09-20 23:44:32"
+    },
+    {
+      "name": "momentum_20",
+      "type": "时序",
+      "definition": "",
+      "params": {},
+      "source": "factor_cards.csv 自动评估",
+      "metrics": {
+        "ic": -0.03258810908515645,
+        "icir": -1.0847479846542651,
+        "monotonic_ret": -0.0015409593181143766
+      },
+      "status": "有效",
+      "version": 1,
+      "created": "2026-09-20 23:44:32",
+      "updated": "2026-09-20 23:44:32"
+    },
+    {
+      "name": "momentum_60",
+      "type": "时序",
+      "definition": "",
+      "params": {},
+      "source": "factor_cards.csv 自动评估",
+      "metrics": {
+        "ic": -0.06241371755672113,
+        "icir": -0.9744836503694595,
+        "monotonic_ret": -0.0030023410346913656
+      },
+      "status": "有效",
+      "version": 1,
+      "created": "2026-09-20 23:44:32",
+      "updated": "2026-09-20 23:44:32"
+    },
+    {
+      "name": "reversal_5",
+      "type": "时序",
+      "definition": "",
+      "params": {},
+      "source": "factor_cards.csv 自动评估",
+      "metrics": {
+        "ic": 0.08347717976745876,
+        "icir": 0.9692259979704684,
+        "monotonic_ret": 0.004655554196988806
+      },
+      "status": "有效",
+      "version": 1,
+      "created": "2026-09-20 23:44:32",
+      "updated": "2026-09-20 23:44:32"
+    },
+    {
+      "name": "volatility_20",
+      "type": "时序",
+      "definition": "",
+      "params": {},
+      "source": "factor_cards.csv 自动评估",
+      "metrics": {
+        "ic": 0.0850708904724852,
+        "icir": 0.19142505129901652,
+        "monotonic_ret": 0.0038625746975085723
+      },
+      "status": "有效",
+      "version": 1,
+      "created": "2026-09-20 23:44:32",
+      "updated": "2026-09-20 23:44:32"
+    },
+    {
+      "name": "volume_ratio",
+      "type": "时序",
+      "definition": "",
+      "params": {},
+      "source": "factor_cards.csv 自动评估",
+      "metrics": {
+        "ic": 0.0032688882134517005,
+        "icir": 0.03744603394060667,
+        "monotonic_ret": 0.004036236159031982
+      },
+      "status": "已证伪",
+      "version": 1,
+      "created": "2026-09-20 23:44:32",
+      "updated": "2026-09-20 23:44:32"
+    },
+    {
+      "name": "liquidity",
+      "type": "时序",
+      "definition": "",
+      "params": {},
+      "source": "factor_cards.csv 自动评估",
+      "metrics": {
+        "ic": -0.031710474354022626,
+        "icir": 0.03681259495126211,
+        "monotonic_ret": -0.0016152331641711717
+      },
+      "status": "有效",
+      "version": 1,
+      "created": "2026-09-20 23:44:32",
+      "updated": "2026-09-20 23:44:32"
+    },
+    {
+      "name": "intraday_range",
+      "type": "时序",
+      "definition": "",
+      "params": {},
+      "source": "factor_cards.csv 自动评估",
+      "metrics": {
+        "ic": 0.0326417497367168,
+        "icir": 0.163642871055016,
+        "monotonic_ret": 0.0030797361588844564
+      },
+      "status": "有效",
+      "version": 1,
+      "created": "2026-09-20 23:44:32",
+      "updated": "2026-09-20 23:44:32"
+    },
+    {
+      "name": "upper_shadow",
+      "type": "时序",
+      "definition": "",
+      "params": {},
+      "source": "factor_cards.csv 自动评估",
+      "metrics": {
+        "ic": 0.08801435397796444,
+        "icir": 0.6238504275852467,
+        "monotonic_ret": 0.00741222150013485
+      },
+      "status": "有效",
+      "version": 1,
+      "created": "2026-09-20 23:44:32",
+      "updated": "2026-09-20 23:44:32"
+    },
+    {
+      "name": "lower_shadow",
+      "type": "时序",
+      "definition": "",
+      "params": {},
+      "source": "factor_cards.csv 自动评估",
+      "metrics": {
+        "ic": -0.005659523795870285,
+        "icir": -0.02746278824504772,
+        "monotonic_ret": -0.0003342852084196851
+      },
+      "status": "已证伪",
+      "version": 1,
+      "created": "2026-09-20 23:44:32",
+      "updated": "2026-09-20 23:44:32"
+    },
+    {
+      "name": "close_position",
+      "type": "时序",
+      "definition": "",
+      "params": {},
+      "source": "factor_cards.csv 自动评估",
+      "metrics": {
+        "ic": -0.02811895590399222,
+        "icir": -0.5271627796738825,
+        "monotonic_ret": -0.0010210981947791082
+      },
+      "status": "已证伪",
+      "version": 1,
+      "created": "2026-09-20 23:44:32",
+      "updated": "2026-09-20 23:44:32"
+    },
+    {
+      "name": "daily_sentiment",
+      "type": "另类",
+      "definition": "",
+      "params": {},
+      "source": "factor_cards.csv 自动评估",
+      "metrics": {
+        "ic": -0.06415474381330197,
+        "icir": -0.4076355923599866,
+        "monotonic_ret": -0.0044951745026272135
+      },
+      "status": "有效",
+      "version": 1,
+      "created": "2026-09-20 23:44:32",
+      "updated": "2026-09-20 23:44:32"
+    },
+    {
+      "name": "ewma_7d",
+      "type": "另类",
+      "definition": "",
+      "params": {},
+      "source": "factor_cards.csv 自动评估",
+      "metrics": {
+        "ic": -0.07233464683864704,
+        "icir": -0.6635592076504383,
+        "monotonic_ret": -0.004268322997850752
+      },
+      "status": "有效",
+      "version": 1,
+      "created": "2026-09-20 23:44:32",
+      "updated": "2026-09-20 23:44:32"
+    },
+    {
+      "name": "ewma_14d",
+      "type": "另类",
+      "definition": "",
+      "params": {},
+      "source": "factor_cards.csv 自动评估",
+      "metrics": {
+        "ic": -0.06860376149982587,
+        "icir": -0.7127970721077969,
+        "monotonic_ret": -0.0054667115638058665
+      },
+      "status": "有效",
+      "version": 1,
+      "created": "2026-09-20 23:44:32",
+      "updated": "2026-09-20 23:44:32"
+    },
+    {
+      "name": "overnight_sentiment",
+      "type": "另类",
+      "definition": "",
+      "params": {},
+      "source": "factor_cards.csv 自动评估",
+      "metrics": {
+        "ic": -0.12136905453928622,
+        "icir": -0.48421857726359563,
+        "monotonic_ret": -0.007082065020007869
+      },
+      "status": "有效",
+      "version": 1,
+      "created": "2026-09-20 23:44:32",
+      "updated": "2026-09-20 23:44:32"
+    },
+    {
+      "name": "market_sentiment",
+      "type": "另类",
+      "definition": "",
+      "params": {},
+      "source": "factor_cards.csv 自动评估",
+      "metrics": {
+        "ic": -0.04398927453435495,
+        "icir": -0.2758373719068718,
+        "monotonic_ret": -0.0033612708712106847
+      },
+      "status": "有效",
+      "version": 1,
+      "created": "2026-09-20 23:44:32",
+      "updated": "2026-09-20 23:44:32"
+    },
+    {
+      "name": "market_ewma_7d",
+      "type": "另类",
+      "definition": "",
+      "params": {},
+      "source": "factor_cards.csv 自动评估",
+      "metrics": {
+        "ic": -0.05704122060266608,
+        "icir": -0.5677455996044432,
+        "monotonic_ret": 0.000656356998828855
+      },
+      "status": "有效",
+      "version": 1,
+      "created": "2026-09-20 23:44:32",
+      "updated": "2026-09-20 23:44:32"
+    },
+    {
+      "name": "market_ewma_14d",
+      "type": "另类",
+      "definition": "",
+      "params": {},
+      "source": "factor_cards.csv 自动评估",
+      "metrics": {
+        "ic": -0.07046893287909055,
+        "icir": -0.694473220841232,
+        "monotonic_ret": -0.000813756102432775
+      },
+      "status": "有效",
+      "version": 1,
+      "created": "2026-09-20 23:44:32",
+      "updated": "2026-09-20 23:44:32"
+    },
+    {
+      "name": "cross_momentum_spread",
+      "type": "时序",
+      "definition": "",
+      "params": {},
+      "source": "factor_cards.csv 自动评估",
+      "metrics": {
+        "ic": 0.018195893515098358,
+        "icir": 0.07090810644623077,
+        "monotonic_ret": 0.002406710639113595
+      },
+      "status": "已证伪",
+      "version": 1,
+      "created": "2026-09-20 23:44:32",
+      "updated": "2026-09-20 23:44:32"
+    },
+    {
+      "name": "动量",
+      "type": "截面",
+      "definition": "过去N日累计收益排序，做多赢家、做空输家",
+      "params": {
+        "lookback": 20
+      },
+      "source": "用户指令复现",
+      "metrics": {
+        "annual": -0.14523785984746906,
+        "sharpe": -0.10327064405244746,
+        "mdd": -51.372428936192804
+      },
+      "status": "已证伪",
+      "version": 2,
+      "created": "2026-09-20 23:44:32",
+      "updated": "2026-09-21 11:08:45"
+    },
+    {
+      "name": "反转",
+      "type": "截面",
+      "definition": "短期输家反弹、赢家回落（与动量相反）",
+      "params": {
+        "lookback": 20
+      },
+      "source": "用户指令复现",
+      "metrics": {
+        "annual": -4.084127315275765,
+        "sharpe": -0.29288675074487575,
+        "mdd": -43.13303410763939
+      },
+      "status": "已证伪",
+      "version": 2,
+      "created": "2026-09-20 23:44:32",
+      "updated": "2026-09-21 11:13:37"
+    },
+    {
+      "name": "波动率",
+      "type": "时序",
+      "definition": "低波动组合长期跑赢高波动（低波动异象）",
+      "params": {},
+      "source": "Ang et al. 2006",
+      "metrics": {},
+      "status": "待验证",
+      "version": 1,
+      "created": "2026-09-20 23:44:32",
+      "updated": "2026-09-20 23:44:32"
+    },
+    {
+      "name": "情绪",
+      "type": "另类",
+      "definition": "投资者情绪过热→未来收益回落（反向指标，风控/过滤型）",
+      "params": {},
+      "source": "Baker-Wurgler 2006",
+      "metrics": {},
+      "status": "待验证",
+      "version": 1,
+      "created": "2026-09-20 23:44:32",
+      "updated": "2026-09-20 23:44:32"
+    },
+    {
+      "name": "均线",
+      "type": "时序",
+      "definition": "价格站上N日均线持有、跌破空仓（趋势择时）",
+      "params": {
+        "lookback": 20
+      },
+      "source": "用户指令复现",
+      "metrics": {
+        "ic": -0.008669604551804008,
+        "annual": 1.881024020351374,
+        "sharpe": -0.008695892637237903,
+        "mdd": -33.667965240374976
+      },
+      "status": "已证伪",
+      "version": 3,
+      "created": "2026-09-20 23:44:32",
+      "updated": "2026-09-21 11:17:18"
+    },
+    {
+      "name": "RSI",
+      "type": "时序",
+      "definition": "RSI 超卖买入、超买卖出（均值回归）",
+      "params": {},
+      "source": "经典技术分析",
+      "metrics": {},
+      "status": "待验证",
+      "version": 1,
+      "created": "2026-09-20 23:44:32",
+      "updated": "2026-09-20 23:44:32"
+    }
+  ]
+}

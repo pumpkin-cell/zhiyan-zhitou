@@ -1,0 +1,20 @@
+{
+  "codes": [
+    {
+      "file": "gen_均线.py",
+      "md5": "7f46c5cbc41d9c0af090fcb1af81fe2e",
+      "content": "import pandas as pd\n\n\ndef factor(close: pd.DataFrame, window: int = 20) -> pd.Series:\n    \"\"\"计算均线因子：收盘价的简单移动平均。\n\n    参数:\n        close: 收盘价数据，索引为日期，列为标的。\n        window: 移动平均窗口，默认 20 日。\n\n    返回:\n        逐日因子值 Series，长度与 close 对齐。\n    \"\"\"\n    ma = close.rolling(window=window, min_periods=window).mean()\n    return ma.stack().dropna()\n",
+      "summary": {
+        "source_quote": "图表 4： 单因子 IC均值与多空（多头）收益",
+        "factor_logic": "计算收盘价的简单移动平均线（均线），作为趋势类因子值。",
+        "code": "import pandas as pd\n\n\ndef factor(close: pd.DataFrame, window: int = 20) -> pd.Series:\n    \"\"\"计算均线因子：收盘价的简单移动平均。\n\n    参数:\n        close: 收盘价数据，索引为日期，列为标的。\n        window: 移动平均窗口，默认 20 日。\n\n    返回:\n        逐日因子值 Series，长度与 close 对齐。\n    \"\"\"\n    ma = close.rolling(window=window, min_periods=window).mean()\n    return ma.stack().dropna()\n",
+        "params": {
+          "window": 20
+        },
+        "entry_func": "factor"
+      },
+      "time": "2026-09-21 11:17:01",
+      "source": "页面手动上传"
+    }
+  ]
+}

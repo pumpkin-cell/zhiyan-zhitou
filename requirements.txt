@@ -1,0 +1,9 @@
+# 智研智投 · 部署依赖清单（Streamlit Community Cloud 部署用）
+# 安装：pip install -r requirements.txt
+# 注意：精确锁版本，保证本地/云端/他人环境一致，避免「大模型生成代码」因版本漂移报错
+streamlit==1.64.0
+pandas==3.0.6
+numpy==2.5.1
+matplotlib==3.11.2
+requests==2.34.2
+pypdf==6.19.0

@@ -1,0 +1,47 @@
+# ===== 大数据文件（原始新闻/训练数据，构建情绪指数的中间产物，演示不需要）=====
+data/raw/news_with_sentiment.csv
+data/raw/news_all_full.csv
+data/raw/news_raw_full.csv
+data/raw/news_raw.csv
+data/raw/sample_for_labeling.csv
+data/raw/stocks_10.csv
+data/raw/stock_price_raw.csv
+data/raw/aligned_sentiment_data.csv
+data/raw/sentiment_indices_market.csv
+
+# ===== 含密钥的数据抓取脚本（不在演示范围内，避免泄露）=====
+data_fetcher.py
+
+# ===== 训练切分与模型权重（演示不需要）=====
+data/splits/
+
+# ===== 运行时产物（缓存/CSV 可重建，不入库；知识库 JSON 作为演示数据入库）=====
+output/summary_cache.json
+output/reproduce_batch.csv
+output/roi_comparison.csv
+
+# ===== Python 缓存 =====
+__pycache__/
+*.pyc
+
+# ===== IDE 与环境 =====
+.idea/
+.venv/
+venv/
+
+# ===== 临时调试脚本 =====
+_*.py
+_*.txt
+
+# ===== 日志 =====
+*.log
+_fetch*.txt
+pw_install*.log
+
+# ===== 密钥（本地开发用；云端用 Streamlit secrets 配置，不落库）=====
+.env
+.streamlit/secrets.toml
+
+# ===== 比赛/商业材料（不入公开仓库）=====
+商业计划书*.md
+商业计划书*.docx
