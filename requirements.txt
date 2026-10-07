@@ -10,3 +10,4 @@ pypdf==6.19.0
 fastapi
 uvicorn
 sqlalchemy
+plotly==7.1.0

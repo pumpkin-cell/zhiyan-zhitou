@@ -89,20 +89,26 @@ if page == "产品体检":
         st.divider()
         # 净值曲线
         if report.get("nav") and report.get("nav_dates"):
-            fig, ax = plt.subplots(figsize=(10, 3.4))
+            import plotly.graph_objects as go
             dates = report["nav_dates"]
             nav = report["nav"]
-            ax.plot(dates, nav, color="#2563eb", linewidth=1.6)
-            ax.fill_between(dates, 1, nav, alpha=0.06, color="#2563eb")
-            ax.axhline(y=1, color="#cbd5e1", linewidth=0.8, linestyle="--")
-            ax.set_title(f"{report['name']} 净值走势（归一化）", fontsize=11, loc="left")
-            ax.grid(alpha=0.25)
-            step = max(1, len(dates) // 6)
-            ax.set_xticks(range(0, len(dates), step))
-            ax.set_xticklabels([dates[i] for i in range(0, len(dates), step)], fontsize=8)
-            for s in ["top", "right"]:
-                ax.spines[s].set_visible(False)
-            st.pyplot(fig)
+            fig = go.Figure()
+            fig.add_trace(go.Scatter(
+                x=dates, y=nav, mode="lines",
+                line=dict(color="#2563eb", width=1.6),
+                hovertemplate="日期 %{x}<br>净值 %{y:.4f}<extra></extra>",
+            ))
+            fig.add_hline(y=1, line_dash="dash", line_color="#cbd5e1", line_width=0.8)
+            fig.update_layout(
+                title=f"{report['name']} 净值走势（归一化）",
+                height=360,
+                margin=dict(l=20, r=20, t=44, b=20),
+                hovermode="x unified",
+                xaxis_title=None,
+                yaxis_title=None,
+                template="plotly_white",
+            )
+            st.plotly_chart(fig, use_container_width=True)
 
         c1, c2, c3, c4, c5, c6 = st.columns(6)
         c1.metric("风险等级", report["risk_level"])
@@ -151,7 +157,7 @@ if page == "产品体检":
 # 页面二：金融术语
 # =====================================================================
 else:
-    st.subheader("金融术语，说人话")
+    st.subheader("金融术语")
     terms = [
         ("年化收益", "把一段时间的收益折算成「一年能赚多少%」，方便不同产品横向比较。"),
         ("最大回撤", "从最高点跌到最低点的最大跌幅。回撤 20% 就是投 10 万最多浮亏 2 万。"),
@@ -162,6 +168,5 @@ else:
         ("夏普比率", "每承担 1 单位风险能多赚多少，一般 >1 算不错。"),
         ("净值", "基金/ETF 每一份的价值，1 元起，随行情涨跌。"),
     ]
-    df = pd.DataFrame(terms, columns=["术语", "大白话解释"])
+    df = pd.DataFrame(terms, columns=["术语", "解释"])
     st.dataframe(df, use_container_width=True, hide_index=True)
-    st.caption("把专业名词翻译成人话，正是「财富翻译官」在做的事。")
