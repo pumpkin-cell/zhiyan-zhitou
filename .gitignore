@@ -45,3 +45,4 @@ pw_install*.log
 # ===== 比赛/商业材料（不入公开仓库）=====
 商业计划书*.md
 商业计划书*.docx
+backend/app.db
