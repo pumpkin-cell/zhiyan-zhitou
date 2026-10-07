@@ -87,14 +87,14 @@ def check_product(code: str, period: str = "3y") -> dict:
     worst = abs(m['max_drawdown_pct'])
     temp = _market_temp(prices)
     credibility, credibility_hint = _credibility(ret)
-    temp_hint = ("当前市场偏热，短期回调风险加大，建议谨慎追高" if temp == "偏热"
-                 else "当前市场偏冷，可能是中长期布局窗口" if temp == "偏冷"
-                 else "当前市场情绪中性")
+    temp_hint = ("当前市场情绪指标处于偏热区间" if temp == "偏热"
+                 else "当前市场情绪指标处于偏冷区间" if temp == "偏冷"
+                 else "当前市场情绪指标处于中性区间")
 
     conclusions = [
         f"{name}（{code}）近一年年化收益约 {m['annual_return_pct']:.1f}%，历史最大回撤 {m['max_drawdown_pct']:.1f}%。",
         f"最坏情况：极端行情下可能回撤约 {worst:.0f}%，投 10 万最多可能亏约 {worst * 1000:.0f} 元。",
-        f"风险等级「{risk}」，适合能承受 {worst:.0f}% 左右波动的投资者。{temp_hint}。",
+        f"风险等级「{risk}」，对应能承受 {worst:.0f}% 左右波动的投资者。{temp_hint}。",
     ]
 
     return {
