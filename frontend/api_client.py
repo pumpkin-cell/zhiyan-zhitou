@@ -39,7 +39,7 @@ def _direct(method_name: str, *args):
 
     # ---- 产品体检（纯计算，只读 CSV，不依赖数据库）----
     if method_name in ("list_products", "list_overview", "check_product"):
-        from app.core import product_check
+        from zhitou.core import product_check
         if method_name == "list_products":
             return [{"code": k, "name": v} for k, v in product_check.ETF_NAMES.items()]
         if method_name == "check_product":
@@ -48,32 +48,32 @@ def _direct(method_name: str, *args):
 
     # ---- 因子复现（纯计算）----
     if method_name == "reproduce_batch":
-        from app.core import factor_compute
+        from zhitou.core import factor_compute
         return factor_compute.reproduce_all()
 
     # ---- 以下需要数据库（sqlalchemy）----
-    from app.db.database import SessionLocal
+    from zhitou.db.database import SessionLocal
     db = SessionLocal()
     try:
         if method_name == "get_factors":
-            from app.services import factor_service
+            from zhitou.services import factor_service
             factor_service.seed_if_empty(db)
             return [factor_service.to_dict(f) for f in factor_service.get_all(db)]
         if method_name == "register_factor":
-            from app.services import factor_service
+            from zhitou.services import factor_service
             p = args[0]
             f = factor_service.register(db, p.get("name", ""), p.get("params"),
                                         p.get("metrics"), p.get("source", ""),
                                         p.get("definition", ""), p.get("ftype", ""))
             return factor_service.to_dict(f)
         if method_name == "get_codes":
-            from app.services import code_service
+            from zhitou.services import code_service
             return [code_service.to_dict(c) for c in code_service.get_all(db)]
         if method_name == "get_reports":
-            from app.services import memory_service
+            from zhitou.services import memory_service
             return [_report(r) for r in memory_service.get_reports(db)]
         if method_name == "get_experiments":
-            from app.services import memory_service
+            from zhitou.services import memory_service
             return [_exp(e) for e in memory_service.get_experiments(db)]
     finally:
         db.close()

@@ -5,10 +5,10 @@
 # =====================================================================
 from fastapi import FastAPI
 
-from app.db.database import Base, engine
-from app import models  # noqa: F401  确保模型注册到 Base.metadata
-from app.api.health import router as health_router
-from app.api import codes, factors, memory, product, reproduce
+from zhitou.db.database import Base, engine
+from zhitou import models  # noqa: F401  确保模型注册到 Base.metadata
+from zhitou.api.health import router as health_router
+from zhitou.api import codes, factors, memory, product, reproduce
 
 # 建表（首次启动自动建表；数据迁移见 app/db/init_db.py）
 Base.metadata.create_all(bind=engine)

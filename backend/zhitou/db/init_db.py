@@ -1,7 +1,7 @@
 # backend/app/db/init_db.py
 # =====================================================================
 # 建表 + 从旧 JSON 文件一次性迁移预制演示数据到 SQLite
-# 运行：python -m app.db.init_db   （在 backend/ 目录下）
+# 运行：python -m zhitou.db.init_db   （在 backend/ 目录下）
 # =====================================================================
 import json
 import os
