@@ -73,7 +73,8 @@ if page == "产品体检":
     selected = col1.selectbox("选择产品查看体检报告", list(options.keys()))
     run = col2.button("生成体检报告", type="primary", use_container_width=True)
 
-    report = None
+    # 报告用 session_state 持久化：切换风险画像选项时不会丢失
+    report_key = (options[selected], period_map[period_label])
     if run:
         with st.spinner("正在生成体检报告..."):
             try:
@@ -84,6 +85,15 @@ if page == "产品体检":
         if "error" in report:
             st.error(report["error"])
             report = None
+        if report:
+            st.session_state["report"] = report
+            st.session_state["report_key"] = report_key
+
+    report = st.session_state.get("report")
+    if report and st.session_state.get("report_key") != report_key:
+        report = None
+        st.session_state.pop("report", None)
+        st.session_state.pop("report_key", None)
 
     if report:
         st.divider()
